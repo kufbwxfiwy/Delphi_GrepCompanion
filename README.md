@@ -1,2 +1,2 @@
 # Delphi_GrepCompanion
-Windows program which shells Grep32 (grep32.exe). The executable is not included in this repository.
+Windows program which shells grep32 (grep32.exe). The grep executable is not included in this repository.
