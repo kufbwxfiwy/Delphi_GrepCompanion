@@ -76,7 +76,7 @@ begin
     Exit;
   end;
   if DragQueryFile(Message.Drop, 0, fn, MAX_PATH) = 0 then Exit;
-  Text := fn; //this the the class' Text variable, like Edit1.Text
+  Text := fn; //This is the class' Text variable, like Edit1.Text
   S2 := fn; //This variable isn't really used. Was previously used by FormDestroy
 end;
 //-- TEdit class augmentation ends--//
@@ -107,7 +107,7 @@ begin
     end;
   GetSystemDirectory(MyBuffer, MAX_PATH - 1);
   StrCat(MyBuffer, '\cmd.exe');
-  SetLength(SystemDir, StrLen(MyBuffer)); //a little bit of help from the net here!
+  SetLength(SystemDir, StrLen(MyBuffer)); //A little bit of help from the net here!
   SystemDir := MyBuffer;
   if not CreateProcess(PChar(SystemDir), PChar(S0), nil, nil, False, NORMAL_PRIORITY_CLASS, nil, nil, MyStartupInfo, MyProcessInfo) then MessageBox(Handle, PChar(SysErrorMessage(GetLastError)), 'System Error!', MB_ICONERROR);
   WaitForSingleObject(MyProcessInfo.hProcess, INFINITE);
@@ -131,8 +131,8 @@ end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
-  MyRegistry := TRegistry.Create; //you have to call the (class) constructor yourself!
-  MyKey := MyRegistry.RootKey; //not used
+  MyRegistry := TRegistry.Create; //You have to call the (class) constructor yourself!
+  MyKey := MyRegistry.RootKey; //Not used
   if MyRegistry.OpenKey('Software\Grep32Companion\', True) then
     begin
       MyDirectory := MyRegistry.ReadString('Directory');
