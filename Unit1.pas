@@ -1,6 +1,6 @@
 //grep32.exe wrapper utility.
 //28-29 March 2016
-//Tough bone, finished by recursing to internet resouces/information.
+//Tough bone, finished by recursing to internet resources/information.
 
 unit Unit1;
 
@@ -69,20 +69,15 @@ var
   c: integer;
   fn: array[0..MAX_PATH-1] of char;
 begin
-
   c := DragQueryFile(Message.Drop, $FFFFFFFF, fn, MAX_PATH);
-
   if c <> 1 then
   begin
     MessageBox(Handle, 'Too many files.', 'Drag and drop error', MB_ICONERROR);
     Exit;
   end;
-
   if DragQueryFile(Message.Drop, 0, fn, MAX_PATH) = 0 then Exit;
-
   Text := fn; //this the the class' Text variable, like Edit1.Text
-  S2 := fn; //I've put this here but now can't understand its purpose
-
+  S2 := fn; //This variable isn't really used. Was previously used by FormDestroy
 end;
 //-- TEdit class augmentation ends--//
 
